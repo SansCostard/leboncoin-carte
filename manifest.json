@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Leboncoin Carte",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.leboncoin.fr/*","*://*.openstreetmap.org/*"],
+      "js": ["jquery.min.js","leaflet.js","main.js"],
+      "css": ["leaflet.css"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png",
+    "96": "icon-96.png"
+  },
+  "permissions": [
+    "webRequest"
+  ]
+}
