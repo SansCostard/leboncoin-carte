@@ -43,7 +43,7 @@ $(function(){
         console.log(content);
         if(content != "")
         {
-          $('.tabsContent').append('<hr><div style="text-align:center"><h2>Page '+page+'</h2></div><hr>'+content);
+          $('.tabsContent').append('<hr style="margin-bottom:12px"><h2 style="padding-left:20px;">Page '+page+'</h2><hr>'+content);
           masquer_init();
           map_init();
           url = next_url;
