@@ -3,7 +3,7 @@
 var liste_masquer = [];
 
 if (localStorage['init'] == undefined) {
-  browser.storage.local.set({'liste_masquer': []});
+  browser.storage.sync.set({'liste_masquer': []});
   localStorage['init'] = 1;
 }
 
@@ -13,7 +13,7 @@ $(function(){
 
 function masquer_init()
 {
-  browser.storage.local.get('liste_masquer',function(o){
+  browser.storage.sync.get('liste_masquer',function(o){
     liste_masquer = o['liste_masquer'];
     for(var i in liste_masquer)
     {
@@ -30,7 +30,7 @@ function masquer_init()
     var parent = $(this).parent('.list_item');
     liste_masquer.push(parent.attr('href'));
     console.log([liste_masquer]);
-    browser.storage.local.set({'liste_masquer': liste_masquer},function(){
+    browser.storage.sync.set({'liste_masquer': liste_masquer},function(){
       parent.remove();
     });
   });
