@@ -1,20 +1,26 @@
 {
   "manifest_version": 2,
-  "name": "Leboncoin Carte",
-  "version": "1.0",
+  "name": "Leboncoin Manager",
+  "version": "1.1",
 
   "content_scripts": [
     {
-      "matches": ["*://*.leboncoin.fr/*","*://*.openstreetmap.org/*"],
-      "js": ["jquery.min.js","leaflet.js","main.js"],
+      "matches": ["*://*.leboncoin.fr/*"],
+      "js": ["jquery.min.js","leaflet.js","modules/map.js","modules/masquer.js","modules/pagination.js"],
       "css": ["leaflet.css"]
     }
   ],
+
+  "background": {
+    "page": "bg.html"
+  },
   "icons": {
     "48": "icon.png",
     "96": "icon-96.png"
   },
   "permissions": [
-    "webRequest"
+    "webRequest",
+    "<all_urls>",
+    "storage"
   ]
 }
